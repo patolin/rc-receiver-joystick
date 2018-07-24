@@ -27,4 +27,4 @@ Channel 3  -------------- Pin 5
 
 *Pins 2 and 3 must be short in order to enable USB device (because of the library hack)
 
-Tested with a Hobbyking 3 channel transmitter and receiver, and VRC simulator. Works great, just like the original VRC adapter.
+Tested with a Hobbyking 3 channel transmitter and receiver, and VRC simulator. Works great, just like the original VRC adapter. Photos and more info (I will upload a video soon) in http://patolin.com/blog/2018/05/29/receptor-rc-digispark/
