@@ -31,7 +31,7 @@ byte chan2val;
 byte chan3val;
 
 // Filtro de promedio desplazado
-const int contFiltro = 16;
+const int contFiltro = 8;
 float SalidaFiltro1[contFiltro];
 float SalidaFiltro2[contFiltro];
 float SalidaFiltro3[contFiltro];
@@ -53,9 +53,15 @@ void loop()
   float total3=0;
   
   // realizamos un mapeo de valores, para ajustar del rango PPM (1000-2000ms) a un byte de datos para el joystick (0-255)
-  chan1val=map(Channel_1_Pulse.width_us(), 700, 2300, 0, 255);
-  chan2val=map(Channel_2_Pulse.width_us(), 700, 2300, 0, 255);
-  chan3val=map(Channel_3_Pulse.width_us(), 700, 2300, 0, 255);
+  if (Channel_1_Pulse.available()) {
+    chan1val=map(Channel_1_Pulse.width_us(), 700, 2300, 0, 255);
+  }
+  if (Channel_2_Pulse.available()) {
+    chan2val=map(Channel_2_Pulse.width_us(), 700, 2300, 0, 255);
+  }
+  if (Channel_3_Pulse.available()) {
+    chan3val=map(Channel_3_Pulse.width_us(), 700, 2300, 0, 255);
+  }
 
   SalidaFiltro1[sigValorFiltro]=chan1val;
   SalidaFiltro2[sigValorFiltro]=chan2val;
