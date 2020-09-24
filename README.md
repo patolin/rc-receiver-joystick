@@ -22,7 +22,9 @@ Channel 2  -------------- Pin 1
                      |--- Pin 2 *
                      |--- Pin 3 *
                           Pin 4
-Channel 3  -------------- Pin 5                       
+Channel 3  -------------- Pin 5    
+Vcc        -------------- Digispark +5V 
+Gnd        -------------- Digispark GND
 ```
 
 *Pins 2 and 3 must be short in order to enable USB device (because of the library hack)
